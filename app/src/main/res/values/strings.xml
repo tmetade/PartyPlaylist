@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Party Playlist</string>
+    <string name="connect">Connect</string>
+    <string name="spotify_callback_uri_scheme">com.example.partyplaylist</string>
+    <string name="spotify_callback_uri_host">callback</string>
+    <string-array name="spotify_scopes">
+        <item>user-read-email</item>
+    </string-array>
 </resources>

@@ -91,4 +91,8 @@ dependencies {
 
     // RecyclerView
     implementation "androidx.recyclerview:recyclerview:$version_recyclerview"
+
+    implementation "com.squareup.retrofit2:converter-scalars:$version_retrofit"
+
+    implementation "com.spotify.android:auth:1.2.3"
 }
