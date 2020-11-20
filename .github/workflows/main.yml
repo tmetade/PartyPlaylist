@@ -20,12 +20,6 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
-          
-      - name: Generate secrets file
-        uses: "finnp/create-file-action@master"
-        env:
-          FILE_NAME: "app/src/main/res/values/secrets.xml"
-          FILE_DATA: '<?xml version=\"1.0\" encoding="utf-8"?><resources><string name="client_id\">12345</string></resources>'
 
       - name: Lint Checker
         run: ./gradlew lint
