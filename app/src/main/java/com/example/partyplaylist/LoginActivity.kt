@@ -6,18 +6,31 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig
+import com.google.firebase.remoteconfig.ktx.remoteConfig
+import com.google.firebase.remoteconfig.ktx.remoteConfigSettings
 import com.spotify.sdk.android.auth.AuthorizationClient
 import com.spotify.sdk.android.auth.AuthorizationRequest
 import com.spotify.sdk.android.auth.AuthorizationResponse
 import com.spotify.sdk.android.auth.LoginActivity.REQUEST_CODE
 import kotlinx.android.synthetic.main.activity_login.*
 
-
 class LoginActivity : AppCompatActivity()
 {
+    private lateinit var remoteConfig: FirebaseRemoteConfig
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+        remoteConfig = Firebase.remoteConfig
+        val configSettings = remoteConfigSettings {
+            minimumFetchIntervalInSeconds = 3600
+        }
+        remoteConfig.setConfigSettingsAsync(configSettings)
+        remoteConfig.setDefaultsAsync(R.xml.remote_config_defaults)
+        remoteConfig.fetchAndActivate()
 
         connectButton.setOnClickListener {
             login()
@@ -25,8 +38,7 @@ class LoginActivity : AppCompatActivity()
     }
 
     private fun login() {
-        @SuppressLint
-        val clientId: String = getString(R.string.client_id)
+        val clientId: String = remoteConfig.getString("spotify_client_id")
         val scopes = getResources().getStringArray(R.array.spotify_scopes);
         val redirectUri = getString(R.string.spotify_callback_uri_scheme) + "://" + getString(R.string.spotify_callback_uri_host)
 
@@ -58,5 +70,4 @@ class LoginActivity : AppCompatActivity()
             }
         }
     }
-
 }

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "159983581899",
+    "firebase_url": "https://partyplaylist-af6da.firebaseio.com",
+    "project_id": "partyplaylist-af6da",
+    "storage_bucket": "partyplaylist-af6da.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:159983581899:android:5a4a4830a74e2b7a96794e",
+        "android_client_info": {
+          "package_name": "com.example.partyplaylist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "159983581899-7c538t908qneuug12r66gndmg45cvgvb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.partyplaylist",
+            "certificate_hash": "cf6ff725bc882943d84543dddf585ed7e09c1bed"
+          }
+        },
+        {
+          "client_id": "159983581899-n8aliksa237hnng2h5kud2g8s234lba4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCc72HsUHEv_wkTQ4FqludjfgwRWI81mgk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "159983581899-n8aliksa237hnng2h5kud2g8s234lba4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
