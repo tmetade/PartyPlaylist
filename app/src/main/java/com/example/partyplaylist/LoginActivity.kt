@@ -1,5 +1,6 @@
 package com.example.partyplaylist
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -24,6 +25,7 @@ class LoginActivity : AppCompatActivity()
     }
 
     private fun login() {
+        @SuppressLint
         val clientId: String = getString(R.string.client_id)
         val scopes = getResources().getStringArray(R.array.spotify_scopes);
         val redirectUri = getString(R.string.spotify_callback_uri_scheme) + "://" + getString(R.string.spotify_callback_uri_host)
