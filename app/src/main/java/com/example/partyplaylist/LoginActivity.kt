@@ -48,10 +48,10 @@ class LoginActivity : AppCompatActivity()
                     startActivity(intent)
                 }
                 AuthorizationResponse.Type.ERROR -> {
-                    Toast.makeText(this, "Unable to login", Toast.LENGTH_LONG)
+                    Toast.makeText(this, "Unable to login", Toast.LENGTH_LONG).show()
                 }
                 else -> {
-                    Toast.makeText(this, "Something happened", Toast.LENGTH_LONG)
+                    Toast.makeText(this, "Something happened", Toast.LENGTH_LONG).show()
                 }
             }
         }
