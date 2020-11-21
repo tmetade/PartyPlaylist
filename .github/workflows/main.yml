@@ -35,7 +35,7 @@ jobs:
 
   generate-apk:
     name: Generate apk
-    runs-on: ubuntu-lates
+    runs-on: ubuntu-latest
     needs: build-and-test
     steps:
       - name: Checkout current repository in ubuntu's file system
